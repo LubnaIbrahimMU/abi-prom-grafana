@@ -1,0 +1,329 @@
+---
+# tasks file for prometheus_grafana
+
+# - name: Update apt cache
+#   apt:
+#     update_cache: yes
+
+# - name: Install required packages
+#   apt:
+#     name:
+#       - prometheus
+#       - nginx
+#       - apache2-utils  # For htpasswd
+#     state: present
+
+# - name: Add Grafana APT key
+#   apt_key:
+#     url: https://packages.grafana.com/gpg.key
+#     state: present
+
+# - name: Add Grafana APT repository
+#   apt_repository:
+#     repo: "deb https://packages.grafana.com/oss/deb stable main"
+#     state: present
+
+# - name: Update apt cache after adding Grafana repo
+#   apt:
+#     update_cache: yes
+
+# - name: Install Grafana
+#   apt:
+#     name: grafana
+#     state: present
+
+# - name: Enable and start Prometheus service
+#   copy:
+#     src: prometheus.service
+#     dest: /etc/systemd/system/prometheus.service
+#   notify:
+#     - Reload systemd
+#     - Restart Prometheus
+
+# - name: Enable and start Grafana service
+#   copy:
+#     src: grafana.service
+#     dest: /etc/systemd/system/grafana.service
+#   notify:
+#     - Reload systemd
+#     - Restart Grafana
+
+# - name: Configure Prometheus
+#   template:
+#     src: prometheus.yml.j2
+#     dest: /etc/prometheus/prometheus.yml
+#   notify:
+#     - Restart Prometheus
+
+# - name: Configure Grafana
+#   template:
+#     src: grafana.ini.j2
+#     dest: /etc/grafana/grafana.ini
+#   notify:
+#     - Restart Grafana
+
+# - name: Configure Nginx for Grafana sub-URI
+#   template:
+#     src: grafana-nginx.conf.j2
+#     dest: /etc/nginx/sites-available/grafana
+#   notify:
+#     - Reload Nginx
+
+# - name: Enable Grafana site
+#   file:
+#     src: /etc/nginx/sites-available/grafana
+#     dest: /etc/nginx/sites-enabled/grafana
+#     state: link
+#   notify:
+#     - Reload Nginx
+
+
+
+
+
+# - name: Update apt cache
+#   apt:
+#     update_cache: yes
+
+# - name: Install required packages
+#   apt:
+#     name:
+#       - prometheus
+#       - nginx
+#       - apache2-utils  # For htpasswd
+#     state: present
+
+# - name: Add Grafana APT key
+#   apt_key:
+#     url: https://packages.grafana.com/gpg.key
+#     state: present
+
+# - name: Add Grafana APT repository
+#   apt_repository:
+#     repo: "deb https://packages.grafana.com/oss/deb stable main"
+#     state: present
+
+# - name: Update apt cache after adding Grafana repo
+#   apt:
+#     update_cache: yes
+
+# - name: Install Grafana
+#   apt:
+#     name: grafana
+#     state: present
+
+# - name: Enable and start Prometheus service
+#   copy:
+#     src: prometheus.service
+#     dest: /etc/systemd/system/prometheus.service
+#   notify:
+#     - Reload systemd
+#     - Restart Prometheus
+
+# - name: Enable and start Grafana service
+#   copy:
+#     src: grafana.service
+#     dest: /etc/systemd/system/grafana.service
+#   notify:
+#     - Reload systemd
+#     - Restart Grafana
+
+# - name: Configure Prometheus
+#   template:
+#     src: prometheus.yml.j2
+#     dest: /etc/prometheus/prometheus.yml
+#   notify:
+#     - Restart Prometheus
+
+# - name: Configure Grafana
+#   template:
+#     src: grafana.ini.j2
+#     dest: /etc/grafana/grafana.ini
+#   notify:
+#     - Restart Grafana
+
+# - name: Configure Nginx for WordPress
+#   template:
+#     src: wordpress-nginx.conf.j2
+#     dest: /etc/nginx/sites-available/wordpress
+#   notify:
+#     - Reload Nginx
+
+# - name: Configure Nginx for Grafana sub-URI
+#   template:
+#     src: grafana-nginx.conf.j2
+#     dest: /etc/nginx/sites-available/grafana
+#   notify:
+#     - Reload Nginx
+
+# - name: Enable WordPress site
+#   file:
+#     src: /etc/nginx/sites-available/wordpress
+#     dest: /etc/nginx/sites-enabled/wordpress
+#     state: link
+#   notify:
+#     - Reload Nginx
+
+# - name: Enable Grafana site
+#   file:
+#     src: /etc/nginx/sites-available/grafana
+#     dest: /etc/nginx/sites-enabled/grafana
+#     state: link
+#   notify:
+#     - Reload Nginx
+
+
+
+# - name: Update apt cache
+#   apt:
+#     update_cache: yes
+
+# - name: Install required packages
+#   apt:
+#     name:
+#       - prometheus
+#       - nginx
+#       - apache2-utils  # For htpasswd
+#     state: present
+
+# - name: Add Grafana APT key
+#   apt_key:
+#     url: https://packages.grafana.com/gpg.key
+#     state: present
+
+# - name: Add Grafana APT repository
+#   apt_repository:
+#     repo: "deb https://packages.grafana.com/oss/deb stable main"
+#     state: present
+
+# - name: Update apt cache after adding Grafana repo
+#   apt:
+#     update_cache: yes
+
+# - name: Install Grafana
+#   apt:
+#     name: grafana
+#     state: present
+
+# - name: Enable and start Prometheus service
+#   copy:
+#     src: prometheus.service
+#     dest: /etc/systemd/system/prometheus.service
+#   notify:
+#     - Reload systemd
+#     - Restart Prometheus
+
+# - name: Enable and start Grafana service
+#   copy:
+#     src: grafana.service
+#     dest: /etc/systemd/system/grafana.service
+#   notify:
+#     - Reload systemd
+#     - Restart Grafana
+
+# - name: Configure Prometheus
+#   template:
+#     src: prometheus.yml.j2
+#     dest: /etc/prometheus/prometheus.yml
+#   notify:
+#     - Restart Prometheus
+
+# - name: Configure Grafana
+#   template:
+#     src: grafana.ini.j2
+#     dest: /etc/grafana/grafana.ini
+#   notify:
+#     - Restart Grafana
+
+# - name: Configure Nginx for WordPress and Grafana
+#   template:
+#     src: wordpress-grafana-nginx.conf.j2
+#     dest: /etc/nginx/sites-available/default
+#   notify:
+#     - Reload Nginx
+
+# - name: Ensure Nginx default site is enabled
+#   file:
+#     src: /etc/nginx/sites-available/default
+#     dest: /etc/nginx/sites-enabled/default
+#     state: link
+#   notify:
+#     - Reload Nginx
+
+
+
+- name: Update apt cache
+  apt:
+    update_cache: yes
+
+- name: Install required packages
+  apt:
+    name:
+      - prometheus
+      - nginx
+      - apache2-utils  # For htpasswd
+    state: present
+
+- name: Add Grafana APT key
+  apt_key:
+    url: https://packages.grafana.com/gpg.key
+    state: present
+
+- name: Add Grafana APT repository
+  apt_repository:
+    repo: "deb https://packages.grafana.com/oss/deb stable main"
+    state: present
+
+- name: Update apt cache after adding Grafana repo
+  apt:
+    update_cache: yes
+
+- name: Install Grafana
+  apt:
+    name: grafana
+    state: present
+
+- name: Enable and start Prometheus service
+  copy:
+    src: prometheus.service
+    dest: /etc/systemd/system/prometheus.service
+  notify:
+    - Reload systemd
+    - Restart Prometheus
+
+- name: Enable and start Grafana service
+  copy:
+    src: grafana.service
+    dest: /etc/systemd/system/grafana.service
+  notify:
+    - Reload systemd
+    - Restart Grafana
+
+- name: Configure Prometheus
+  template:
+    src: prometheus.yml.j2
+    dest: /etc/prometheus/prometheus.yml
+  notify:
+    - Restart Prometheus
+
+- name: Configure Grafana
+  template:
+    src: grafana.ini.j2
+    dest: /etc/grafana/grafana.ini
+  notify:
+    - Restart Grafana
+
+- name: Configure Nginx for WordPress and Grafana
+  template:
+    src: wordpress-grafana-nginx.conf.j2
+    dest: /etc/nginx/sites-available/default
+  notify:
+    - Reload Nginx
+
+- name: Ensure Nginx default site is enabled
+  file:
+    src: /etc/nginx/sites-available/default
+    dest: /etc/nginx/sites-enabled/default
+    state: link
+  notify:
+    - Reload Nginx
